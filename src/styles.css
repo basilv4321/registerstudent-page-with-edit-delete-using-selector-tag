@@ -1,0 +1,10 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.backimg{
+    background-image: url(https://img.freepik.com/free-vector/group-college-university-students-hanging-out_74855-5251.jpg?w=2000);
+    background-repeat: no-repeat ;
+    /* background-size: cover; */
+}

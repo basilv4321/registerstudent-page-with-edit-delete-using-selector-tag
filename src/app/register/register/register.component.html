@@ -1,0 +1,73 @@
+<div class="backimg">
+    <div class="mylogo">
+        <i class="fa-solid fa-2x fa-graduation-cap"></i>student registration form
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-3"></div>
+            <div class="col-3">
+                <div class="border border-primary box" >
+                    <form action="" (ngSubmit)="submit()" [formGroup]="registerForm" >
+                        <div class="inp" style="height: 66px;">
+                            <span class="p-float-label">
+                                <input id="float-input" (click)="change()" style="height: 40px;" class="inp1 form-control" formControlName="name" name="name" type="text" pInputText> 
+                                <label for="float-input">name</label>
+                            </span>
+                            <div *ngIf="re['name']?.errors && (re['name']?.touched || submitBoolean)">
+                                <div *ngIf="re['name'].errors?.['required']" style="color: red; font-size:small;">*this field is required</div>
+                                <div *ngIf="re['name'].errors?.['minlength']" style="color: red; font-size:small;">*minimum length 3</div>
+                                <div *ngIf="re['name'].errors?.['maxlength']" style="color: red; font-size:small;">*maximum length 20</div>
+                            </div>
+                        </div>
+                        
+                        <div class="inp" style="height: 66px;">
+                            <span class="p-float-label">
+                                <input id="float-input" (click)="change()" style="height: 40px;" class="inp1 form-control" formControlName="age" name="age" type="number" pInputText> 
+                                <label for="float-input">age</label>
+                            </span>
+                            <div *ngIf="re['age']?.errors && (re['age']?.touched || submitBoolean)">
+                                <div *ngIf="re['age'].errors?.['required']" style="color: red; font-size:small;">*this field is required</div>
+                                <div *ngIf="re['age'].errors?.['min']" style="color: red; font-size:small;">*minimum age 18</div>
+                                <div *ngIf="re['age'].errors?.['max']" style="color: red; font-size:small;">*maximum age 58</div>
+                            </div>
+                        </div>
+                        <div class="inp" style="height: 66px;">
+                            <span class="p-float-label">
+                                <input id="float-input" (click)="change()" style="height: 40px;" class="inp1 form-control" formControlName="place" name="place" type="text" pInputText> 
+                                <label for="float-input">place</label>
+                            </span>
+                            <div *ngIf="re['place']?.errors && (re['place']?.touched || submitBoolean)">
+                                <div *ngIf="re['place'].errors?.['required']" style="color: red; font-size:small;">*this field is required</div>
+                                <div *ngIf="re['place'].errors?.['minlength']" style="color: red; font-size:small;">*minimum length 3</div>
+                                <div *ngIf="re['place'].errors?.['maxlength']" style="color: red; font-size:small;">*maximum length 20</div>
+                            </div>
+                        </div>
+                        <div class="inp" style="height: 50px;">
+                            <div class="" style="display: inline-block;">
+                                Gender:
+                            </div>
+                            <mat-radio-group aria-label="Select an option" formControlName="gender" (click)="change()">
+                                <mat-radio-button value="Male">Male</mat-radio-button>
+                                <mat-radio-button value="Female">Female</mat-radio-button>
+                                <mat-radio-button value="Other">Other</mat-radio-button>
+                            </mat-radio-group>
+                            <div *ngIf="re['gender']?.errors && (re['gender']?.touched || submitBoolean)">
+                                <div *ngIf="re['gender'].errors?.['required']" style="color: red; font-size:small;">*select one field</div>
+                            </div>
+                        </div>
+                        <div class="text-center inp inp3" *ngIf="edit1==false">
+                            <button class="btn btn-success">REGISTER</button>
+                        </div>
+                        <div class="text-center inp inp3" *ngIf="edit1==true">
+                            <button class="btn btn-warning" style="padding-inline: 20px;">EDIT</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="col-6" >
+                <app-list [myRegister]="register" (myNewRegister)="childGetfn($event)"></app-list>
+                
+            </div>
+        </div>
+    </div>
+</div>

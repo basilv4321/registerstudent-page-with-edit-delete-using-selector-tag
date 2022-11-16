@@ -1,0 +1,45 @@
+<div  class="box2">
+    <table class="table table-success table-striped">
+        <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Place</th>
+                    <th>Gender</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+        </thead>
+        
+        <tbody *ngIf="reg.length;else case;">
+                <tr *ngFor="let data of reg;let i=index" >
+                    <td>
+                        {{data.name}}
+                    </td>
+                    <td>
+                        {{data.age}}
+                    </td>
+                    <td>
+                        {{data.place}}
+                    </td>
+                    <td>
+                        {{data.gender}}
+                    </td>
+                    <td>
+                        {{i}}
+                    </td>
+                    <td>
+                        <button class="btn btn-light fw-bold" appMydirective (click)="delete(i)" style="font-size: 13px;border-color: black;">DELETE</button>
+                    </td>
+                    <td>
+                        <button class="btn btn-info fw-bold" (click)="edit(i)" style="font-size: 13px;">EDIT</button>
+                    </td>
+                </tr>
+        </tbody>
+        <ng-template #case >
+            <tr>
+                <td colspan="6" style="text-align:center"><h2>No Data Available</h2></td>
+            </tr>
+        </ng-template>
+      </table>
+</div>

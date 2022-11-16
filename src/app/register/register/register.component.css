@@ -1,0 +1,26 @@
+.box{
+    border-radius: 10px;
+    height: 20rem;
+    width: 21rem;
+    margin-top: 10rem;
+}
+
+.inp1{
+    border-color: #4287f5;
+}
+.inp{
+    padding-top: 25px;
+    padding-inline: 27px;
+}
+.box2{
+    margin-top: 10rem;
+    padding-left: 4rem;
+}
+.inp3{
+    padding-top: 16px;
+}
+.mylogo{
+    font-family: 'Playball', cursive;
+    font-size: 23px;
+    padding-left: 40px;
+}
